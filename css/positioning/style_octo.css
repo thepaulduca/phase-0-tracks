@@ -1,0 +1,29 @@
+h2 {
+  text-align: center;
+}
+
+#octopus {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  margin-left: -60px;
+  display: inline-block;}
+
+
+#hat {
+  position: absolute;
+  top: 170px;
+  left: 46%;
+  margin-left: -50px;
+  z-index: 2;
+  display: inline-block;
+}
+
+#glasses {
+  position: absolute;
+  top: 350px;
+  left: 54%;
+  margin-left: -60px;
+  display: inline-block;
+  z-index: 1;
+}
