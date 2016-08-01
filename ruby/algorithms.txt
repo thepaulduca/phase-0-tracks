@@ -1,0 +1,70 @@
+
+
+to use elevator first 
+
+if [desired location] more then two flights of stairs use elevator
+
+look for directory that tells you where everything in the building is and search until you find your [desired location] is on and which floor you are on, store your desired location as a number as a variable [floor number] and the location you are on as [current floor]
+
+if [desired location] more then two flights of stairs away use elevator
+
+locate the elevator buttons and entrance
+
+move towards the up and down button
+
+
+if [floor number] is lower then [current floor] 
+	must go up >press up button
+
+if [floor number] is higher the [current floor] 
+	must go down> press down button
+
+wait for elvator to arrive 
+	(usually accompained by a *bing* sound)
+
+when the doors open enter elevator
+
+locate the directory in the elevator with the options for floors 
+
+move close to the directory 
+
+scan through the directorys numbers starting at the bottom and go untill the number matches [floor number]
+	press that number
+
+wait in elevator, till its [current stop] == [floor number]
+	while in the elvator never make eye contact it is socially unacctepable 
+
+	until the elvator gets to [floor number] stay in the elvator
+
+when it gets to [floor number]exit the elvator
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Walk the Dog
+
+Locate leash - look around house
+start in laundry room, then garage, then kitchen, then car
+if at this point still cant find the leash call mother she will know where it is
+	if mother doesnt answer call father but he wont know 
+	contiue to look until found, or mother calls and tells you where it is
+
+Locate dog, if not within vision call dogs name  dog ='Ginger'
+
+until dog is found, continue to call name
+	if dog is not in house look outside
+
+when dog is found command her to come until dog comes
+	if she does not come say no firmly and repeat the command
+
+when dog is within reach command her to sit until dog sits
+	if she does not sit say no firmly and repeat the command
+
+when dog is leashed leave house and begin walk
+
+walk until dog pees and poops
+	when pee or poop say good dog to encourge behavior 
+	when poop act like your picking it up with a bag, but dont thats gross
+when dog pee and pooped return home
+
+when home take leash of dog 
+	if dog was good throughout process give treat 
