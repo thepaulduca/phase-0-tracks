@@ -1,50 +1,79 @@
-
 puts "What is your name?"
 name = gets.chomp!
 
-puts  "Nice to meet you #{name}!! How old are you #{name} ?"
+puts  "Nice to meet you #{name}!! How old are you #{name}?"
 age = gets.chomp!
 
-puts  "What year were you born? "
+puts  "What year were you born?"
 birth_year = gets.chomp!
 
 if (age.to_i == (2016 - birth_year.to_i)) == true
-	vampire_time = false 
+	human_time = true 
 else
-	vampire_time = true
+	human_time = false
 end 
 
-
-
 puts "Our cafateria serves garlic bread, would you like some? (y/n)"
-garlic_pref = gets.downcase.chomp!
-		
+garlic = gets.downcase.chomp
+
+if garlic == "y"
+	garlic = true
+else
+	garlic = false
+end
 
 puts  "Are you interested in health insurence? (y/n)"
 health = gets.downcase.chomp!
 
-
-if garlic_pref= "y"
-	garlic_pref = true
-elsif garlic_pref = "n"
-	garlic_pref = false
-else 
-	puts "I didn't understand"
-end
-
 if health == "y"
 	health = true
-elsif health == "n"
-	health = false
 else
-	puts "I didn't understand"
+	health = false
+end
+
+puts "Do you have any allergies? press enter after each allergy and type done when you are finished"
+allergy = gets.chomp
+
+until allergy == "done"
+	puts "Any more allergies"
+	allergy = gets.chomp
+	if allergy == "sunshine"
+		puts "Probably a vampire"
+		human_time == false
+	end 
 end
 
 
-case vampire_time
-	when (garlic_pref || health) 
-	puts "Probably not a vampire"	
-	else
-	puts "You might be a vampire"
-	end 
+if human_time == false
+ if (garlic || health) == true
+ 	case name
+			when "Drake Cula","Tu Fang"
+				puts "Definitely a vampire."
+			else 
+				puts "Probably a vampire."
+			end
+ elsif !(garlic && health)
+	puts "Almost certainly a vampire!"
+end
+end
 
+
+if  human_time == true
+	if (garlic || health) 
+		case name
+			when "Drake Cula","Tu Fang"
+				puts "Definitely a vampire."
+			else 
+				puts "Probably not a vampire."
+			end
+	elsif !(garlic && health)
+		case name
+			when "Drake Cula","Tu Fang"
+				puts "Definitely a vampire."
+			else 
+				puts "Probably not a vampire."
+			end
+	else		
+		puts "Results inconclusive!"
+	end
+end
