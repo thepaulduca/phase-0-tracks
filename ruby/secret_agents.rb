@@ -1,3 +1,22 @@
+=begin
+	
+	Create a method that encrpyts a password by moving each letter one foward in the string. 
+
+	method with one parameter (string)
+		counter which will be labeled as index because it will be used to index 
+		create variable new string where you can store the encrypted password
+		use a while loop while the counter(called index) is less the the length of the string 
+		so it will go through the whole string
+		add each letter into the new string, calling the next method on it so it changes to one letter foward
+		the counter/index moves up one
+		pring the encrypted password to the screen
+
+		the decrypt method employees similar logic, but has an extra step, it gets matched up with the alphabet 
+		then using the alphabet number as its index and subtract one to go backwards one
+
+	
+=end
+
 def encrypt(string)
 	index = 0 
 	new_string = ""
