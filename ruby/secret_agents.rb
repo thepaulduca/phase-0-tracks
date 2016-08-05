@@ -42,6 +42,17 @@ elsif agent_encrypt == "n"
 		puts "Program ending"
 	end
 else
-	puts "Program ending"
+	puts "Improper input, you could be a spy program ending"
 end
+
+
+=begin
+	
+decrypt(encrypt("swordfish"))
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
+
+=end
 
