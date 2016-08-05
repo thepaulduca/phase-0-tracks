@@ -1,10 +1,3 @@
-puts "Would you like to encrypt a password?(y/n)"
-agent_encrypt = gets.chomp
-if agent_encrypt == y
-	
-
-if agent_encrypt
-
 def encrypt(string)
 	index = 0 
 	new_string = ""
@@ -28,3 +21,27 @@ def decrypt(string)
 	end
 	p new_string
 end
+
+
+puts "Would you like to encrypt a password?(y/n)"
+agent_encrypt = gets.chomp
+if agent_encrypt == "y"
+	puts "What is the password you would like to decrypt?"
+	pass_encrypt = gets.chomp
+	encrypt(pass_encrypt)
+	puts "Program ending"
+elsif agent_encrypt == "n"
+	puts "Would you like to decrypt a password? (y/n)"
+	agent_decrypt = gets.chomp
+	if agent_decrypt == "y"
+		puts "What is the password you would like to decrypt?"
+		pass_decrypt = gets.chomp
+		decrypt(pass_decrypt)
+		puts "Program ending"
+	else 
+		puts "Program ending"
+	end
+else
+	puts "Program ending"
+end
+
