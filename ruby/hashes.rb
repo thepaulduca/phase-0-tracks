@@ -113,5 +113,5 @@ if change == "y"
 	puts client_hash
 	puts "Thanks for using our program goodbye"
 else
-	"Thanks for using the program goodbye"
+	puts "Thanks for using the program goodbye"
 end
