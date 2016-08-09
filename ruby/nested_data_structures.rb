@@ -18,7 +18,7 @@ puts city
 nyc_streets = ['42nd', 'broadway', '7th ave', '3rd ave', '38th st']
 city[:nyc] << nyc_streets
 
-nyc_sights = ['statue of liberty', 'empire state building', 'yankee stadium','citi field', 'MOMA']
+nyc_sights = ['statue of liberty', 'empire state building', 'yankee stadium','citi field', 'MOMA', 'MSG']
 city[:nyc] << nyc_sights
 
 nyc_famous = ['Notorious BIG', 'Bernie Sanders', 'Jay -z', ['donald trump', 'donald drumpf'] , 'Michael Jordan', 'J-lo']
@@ -75,10 +75,31 @@ puts city[:nyc][1]
 
 puts city[:chicago].assoc('kanye west')
 
+puts city[:dallas]
 
 
 
+city.each do |key, value|
+	puts "This is the key :#{key}"
+	puts "This is the value :#{value}"
+	puts
+end 
 
 
+city.each do |key,value|
+	value.each do |array|
+		array.include?('d-rose')
+		puts 
+		puts "The chi is moving you to #{city[:nyc][1][5]}"
+	end
+end
 
+city[:nyc].each do |array_of_arrays|
+	array_of_arrays.each do |array|
+		if array.length > 7
+			puts array
+		end 
+	end
+end
 
+#puts city
