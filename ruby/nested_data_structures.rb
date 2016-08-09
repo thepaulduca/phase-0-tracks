@@ -77,7 +77,7 @@ puts city[:chicago].assoc('kanye west')
 
 puts city[:dallas]
 
-
+#Some iteration for extra fun
 
 city.each do |key, value|
 	puts "This is the key :#{key}"
@@ -102,4 +102,4 @@ city[:nyc].each do |array_of_arrays|
 	end
 end
 
-#puts city
+puts city
