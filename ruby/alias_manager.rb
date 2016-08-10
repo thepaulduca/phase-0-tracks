@@ -1,6 +1,5 @@
-name = "Paul Duca"
 
-def vowel_change(word)
+def name_change(word)
 	word = word.split(' ').reverse!.join(' ')
 	word = word.downcase.split('')
 	vowels = ['a','e','i','o','u']
@@ -26,7 +25,22 @@ def vowel_change(word)
 	
 end 
 
-puts vowel_change(name)
+puts "Welcome to the amazing name changer! (TM)"
+puts "Type end to exit"
+system_end = false
+until system_end == true
+	puts "Type a name you would like to secrify!"
+	name = gets.chomp
+	if name.downcase == "end"
+		system_end = true
+	else
+		puts "Your new name is #{name_change(name)}"
+	end
+end
+
+
+
+
 
 
 #Reverse the first and last name
