@@ -1,4 +1,4 @@
-name = "Huge Uden"
+name = "Paul Duca"
 #Reverse the first and last name
 
 def name_reverse(name)
@@ -9,9 +9,7 @@ name = name_reverse(name)
 
 #change the vowels
 
-puts name.length
-
-def vowel_change(word)
+def letter_change(word)
 	word = word.downcase.split('')
 	vowels = ['a','e','i','o','u']
 	new_word = []
@@ -30,12 +28,10 @@ def vowel_change(word)
 			letter = letter.next!
 			new_word << letter
 		end
-		puts new_word.join('')
 	end
 	new_word = new_word.join()
 	return new_word
-	
 end 
 
-puts vowel_change(name)
+puts letter_change(name)
 
