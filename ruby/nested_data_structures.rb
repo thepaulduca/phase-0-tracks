@@ -88,11 +88,9 @@ end
 
 city.each do |key,value|
 	value.each do |array|
-		if array.include?('d-rose')
+		array.include?('d-rose')
 		puts 
-		puts "Sorry #{city[:chicago][2][1]} the chi is moving you to #{city[:nyc][1][5]}"
-		puts
-		end
+		puts "The chi is moving you to #{city[:nyc][1][5]}"
 	end
 end
 
