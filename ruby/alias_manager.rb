@@ -1,19 +1,12 @@
 name = "Paul Duca"
 #Reverse the first and last name
 
-def name_reverse(name)
+def name_encrypt(name)
 	name = name.split(' ').reverse!.join(' ')
-end 
-
-name = name_reverse(name)
-
-#change the vowels
-
-def letter_change(word)
-	word = word.downcase.split('')
+	name = name.downcase.split('')
 	vowels = ['a','e','i','o','u']
 	new_word = []
-	word.each do |letter|
+	name.each do |letter|
 		if vowels.include?(letter)
 			letter_index = vowels.index(letter)
 			if letter_index == 4
@@ -33,5 +26,5 @@ def letter_change(word)
 	return new_word
 end 
 
-puts letter_change(name)
+puts name_encrypt(name)
 
