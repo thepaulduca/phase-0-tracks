@@ -54,10 +54,33 @@ def update_amount(hash, item, new_quantity)
 	hash
 end
 
-update_amount(hash, 'cheese', 20)
-
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+# input: just the hash
+# steps: itterate through the key value pair in a pretty way
+# output: pretty list
+
+def pretty_print_list(hash)
+	hash.each do |key, value|
+		puts "You need #{value}, #{key}"
+	end
+end
+
+#Test Code
+grocery_list("lemonade milk", hash)
+subtract_from_list("milk", hash)
+add_item_to_list('cheese', 10, hash)
+update_amount(hash, 'cheese', 20)
+pretty_print_list(hash)
+subtract_from_list('lemonade', hash)
+
+#Assignments
+add_item_to_list('lemonade', 3, hash)
+add_item_to_list('tomatoes', 3, hash)
+add_item_to_list('onions', 1, hash)
+add_item_to_list('ice cream', 4, hash)
+subtract_from_list('lemonade', hash)
+update_amount(hash, 'ice cream', 1)
+pretty_print_list(hash)
+
+
