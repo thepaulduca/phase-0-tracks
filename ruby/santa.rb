@@ -1,4 +1,6 @@
 class Santa
+	attr_accessor :gender, :age
+	attr_reader :ethnicity
 
 	def initialize(gender, ethnicity)
 		puts "Initializing a new santa."
@@ -24,13 +26,6 @@ class Santa
 		@reindeer_ranking.insert(-1, reindeer)
 	end
 	
-	def print_age
-		puts @age
-	end
-
-	def ethnicity
-		puts @ethnicity
-	end
 
 end
 
@@ -48,7 +43,17 @@ santas << Santa.new("N/A", "N/A")
 
 santas.each do |santa|
 	santa.celebrate_birthday
-	santa.print_age
 end
 
+chris_kringle = Santa.new("male","white")
+santas << chris_kringle
+
+chris_kringle.gender = "female"
+puts chris_kringle.gender 
+puts chris_kringle.ethnicity
+
+santas.map! do |santa|
+	santa.gender = "male"
+	puts santa.gender
+end 
 
