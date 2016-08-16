@@ -56,18 +56,24 @@ puts "Welcome to the Basketball Player Creator!"
 puts "How many players would like to create?"
 num_of_players = gets.chomp
 num_of_players.to_i.times do |x|
-	puts "what position would you like this one to be?"
+	puts "what position would you like player one to be?"
 	position = gets.chomp.downcase
-	puts "how tall are they? (type feet, then space and then inches"
-	player_height = gets.chomp
+	puts "how tall are they? (type feet, then space and then inches)"
+	player_height = gets.chomp.split(' ')
 	players << Basketball_player.new(position, player_height)
 end
 
-puts '----------------'
+p '----------------'
+
+puts players
+
+p '----------------'
 
 players.each do |player|
+	puts "Player position"
 	puts player.position
-	puts "player is feet #{player.height} inches" 
+	puts "Player Height"
+	puts "Feet/inches : #{player.height} " 
 end
 
 puts '-----------------'
@@ -80,13 +86,13 @@ players.each do |player|
 		if player.position == shooting_p
 			player.shoot
 		end
+	end
 puts "Would you like to have another player shoot? (y/n)"
 continue = gets.chomp
 		if continue =='y'
 		else
 			shooting = false
 		end
-	end 
 end 
 
 puts '-----------------'
@@ -102,15 +108,18 @@ end
 puts '-----------------'
 
 puts "Here is how your players played!"
+puts '-----------------'
 players.each do |player|
-	puts player.position
-	puts player.points_scored
-	puts "---------------"
+	puts  player.position
+	puts "Points: "
+	puts "#{player.points_scored}"
+	p "---------------"
 end
 
 
 
 =begin
+
 kobe = Basketball_player.new('SG')
 puts kobe.team_name = 'Lakers'
 puts kobe.location = "LA"
@@ -127,4 +136,5 @@ kobe.foul
 end
 
 kobe.points_scored
+
 =end
