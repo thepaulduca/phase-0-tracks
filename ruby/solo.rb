@@ -4,13 +4,15 @@ end
 
 
 class Basketball_player < Basketball_team
-	attr_accessor :position, :points, :fouls, :name
+	attr_accessor :position, :points, :fouls, :name, :height
 	
-	def initialize(position)
+	def initialize(position, height)
 		@position = position
 		@points = 0
 		@fouls = 0
 		@name = name
+		@height = height
+
 	end
 
 	def shoot
@@ -56,26 +58,56 @@ num_of_players = gets.chomp
 num_of_players.to_i.times do |x|
 	puts "what position would you like this one to be?"
 	position = gets.chomp.downcase
-	players << Basketball_player.new(position)
+	puts "how tall are they? (type feet, then space and then inches"
+	player_height = gets.chomp
+	players << Basketball_player.new(position, player_height)
 end
 
 puts '----------------'
 
 players.each do |player|
 	puts player.position
+	puts "player is feet #{player.height} inches" 
 end
 
 puts '-----------------'
 
-puts "Type the position of the position you want to shoot!"
+shooting = true
+until shooting == false
+puts "Type the position of the position you want to shoot (from 2)!"
+shooting_p = gets.chomp.downcase
+players.each do |player|
+		if player.position == shooting_p
+			player.shoot
+		end
+puts "Would you like to have another player shoot? (y/n)"
+continue = gets.chomp
+		if continue =='y'
+		else
+			shooting = false
+		end
+	end 
+end 
+
+puts '-----------------'
+
+puts "Type the position of the player you want to shoot from 3!"
 shooting_p = gets.chomp.downcase
 players.each do |player|
 	if player.position == shooting_p
-		player.shoot
+		player.shoot_3
 	end
 end 
 
 puts '-----------------'
+
+puts "Here is how your players played!"
+players.each do |player|
+	puts player.position
+	puts player.points_scored
+	puts "---------------"
+end
+
 
 
 =begin
