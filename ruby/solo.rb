@@ -1,16 +1,21 @@
+# Be able to create instances of the class of basketball players
+# You can then assign them to a team either the bulls or the lakers
+# You pick which players shoot
+# At the end the team with the most points wins
+
 class Basketball_team
-	attr_accessor :team_name, :location
+	attr_accessor :location
 end
 
 
 class Basketball_player < Basketball_team
-	attr_accessor :position, :points, :fouls, :name, :height
+	attr_accessor :position, :points, :fouls, :height
+	attr_reader :points
 	
 	def initialize(position, height)
 		@position = position
 		@points = 0
 		@fouls = 0
-		@name = name
 		@height = height
 
 	end
@@ -49,14 +54,15 @@ class Basketball_player < Basketball_team
 	end
 
 
-end 
+end
 
 players = []
 puts "Welcome to the Basketball Player Creator!"
 puts "How many players would like to create?"
 num_of_players = gets.chomp
 num_of_players.to_i.times do |x|
-	puts "what position would you like  one to be?"
+	puts "what position would you like this player to be?"
+	puts "PG - SG - SF - PF - C"
 	position = gets.chomp.downcase
 	puts "how tall are they? (type feet, then space and then inches)"
 	player_height = gets.chomp.split(' ')
@@ -95,19 +101,21 @@ players.map do |player|
 	end
 end
 
-	p '----------------'
-	puts "bulls players:"
-	puts bulls.length
-	bulls.each do |player|
-		puts player.position
-	end
-	p '----------------'
-	puts "lakers players"
-	puts lakers.length
-	lakers.each do |player|
-		puts player.position
-	end
-	p '----------------'
+p '----------------'
+puts "bulls players:"
+puts bulls.length
+bulls.each do |player|
+puts player.position
+end
+	
+p '----------------'
+puts "lakers players"
+puts lakers.length
+lakers.each do |player|
+puts player.position
+end
+
+p '----------------'
 
 
  
@@ -125,8 +133,10 @@ unless bulls.length == lakers.length
 		new_player = Basketball_player.new(position, player_height)
 		players << new_player
 		if bulls.length > lakers.length
+			new_player.location = 'lakers'
 			lakers << new_player
 		else
+			new_player.location = 'bulls'
 			bulls << new_player
 		end
 	else
@@ -167,8 +177,10 @@ p '----------------'
 players.each do |player|
 	puts "Player position"
 	puts player.position
+	puts player.location
 	puts "Player Height"
 	puts "Feet/inches : #{player.height} " 
+	p '----------------'
 end
 
 puts '-----------------'
@@ -176,6 +188,7 @@ puts '-----------------'
 shooting = true
 until shooting == false
 puts "Type the position of the position you want to shoot (from 2)!"
+puts "If you select a position that has multiple players they will both shoot"
 shooting_p = gets.chomp.downcase
 players.each do |player|
 		if player.position == shooting_p
@@ -196,49 +209,43 @@ puts '-----------------'
 puts "Type the position of the player you want to shoot from 3!"
 shooting_p = gets.chomp.downcase
 players.each do |player|
-	puts player.location
 	if player.position == shooting_p
 		player.shoot_3
 	end
 end 
 
+
 puts '-----------------'
 
 puts "Here is how the teams  played!"
+bulls_points = 0
+lakers_points = 0
 puts '-----------------'
 lakers.each do |player|
 	puts  player.position
 	puts "Points: "
 	puts "#{player.points_scored}"
+	lakers_points = lakers_points + player.points
 end
-	p "---------------"
+p "---------------"
 bulls.each do |player|
 	puts  player.position
 	puts "Points: "
 	puts "#{player.points_scored}"
+	bulls_points = bulls_points + player.points
 end
 
+p "---------------"
 
-
-
-=begin
-
-kobe = Basketball_player.new('SG')
-puts kobe.team_name = 'Lakers'
-puts kobe.location = "LA"
-puts kobe.team_name
-10.times do |x|
-	kobe.shoot
-end 
-
-kobe.foul
-kobe.foul
-
-5.times do |x|
-	kobe.shoot_3
+puts "FINAL SCORE"
+puts "Bulls : #{bulls_points}"
+puts "Lakers : #{lakers_points}"
+if bulls_points > lakers_points
+	puts "Bulls WIN!"
+elsif lakers_points > bulls_points
+	puts "Lakers WIN!"
+else
+	puts "It's a tie!"
 end
 
-kobe.points_scored
-
-=end
 
