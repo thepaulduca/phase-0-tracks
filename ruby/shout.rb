@@ -1,5 +1,5 @@
 module Shout
-	
+
 	def yell_angrily(words)
 		words + "!!!" + " :("
 	end
@@ -11,7 +11,6 @@ module Shout
 	def yell_very_angrily(words)
 		words.upcase + '!!!' '>:o'
 	end
-
 end
 
 class Mad_dude
