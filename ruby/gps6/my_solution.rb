@@ -10,6 +10,7 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+attr_reader :state, :population, :population_density
 
 #sets instance variables on initializeation of a new instances 
   def initialize(state_of_origin, population_density, population)
@@ -18,50 +19,54 @@ class VirusPredictor
     @population_density = population_density
   end
 
+
 #runs other methods, puts the two strings together in a sensical sentence
 
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
-
 #based on population density sets number of deaths using population
 #prints results in a string
-  def predicted_deaths(population_density, population, state)
+  
+    def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+    if population_density >= 200 
+      multiplyer = 0.4 
+    elsif population_density >= 150 
+      multiplyer = 0.3  
+    elsif population_density >= 100
+      multiplyer = 0.2
+    elsif population_density >= 50
+      multiplyer = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      multiplyer = 0.05
     end
+
+    number_of_deaths = (@population * multiplyer).floor
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
 
 
+
 #uses population density to set the speed of the spread and prints it in a string 
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
+    if population_density >= 200
       speed += 0.5
-    elsif @population_density >= 150
+    elsif population_density >= 150
       speed += 1
-    elsif @population_density >= 100
+    elsif population_density >= 100
       speed += 1.5
-    elsif @population_density >= 50
+    elsif population_density >= 50
       speed += 2
     else
       speed += 2.5
@@ -78,9 +83,9 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-STATE_DATA.each do |state,hash|
-  state= VirusPredictor.new(state, hash[:population_density], hash[:population])
-  state.virus_effects
+STATE_DATA.each do |state_name, population_info|
+  test_state = VirusPredictor.new(state_name, population_info[:population_density], population_info[:population])
+  test_state.virus_effects
 end 
 
 
