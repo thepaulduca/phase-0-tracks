@@ -105,3 +105,17 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+
+=begin 
+
+in state data, the first hash uses the hash rocket =>
+the secound hash uses the syntatic sugar of symbol setting value 
+which takes the colon and put it in front, allowing u to get rid of the hash rocket
+
+require relative brings code from a seperate file into the current file 
+require relative is used for your own code where require is used when you are bringing someone elses code
+this is not always the case but for the most part this holds true
+
+when refractoring the methods I relized that if you use attr_accessor you dont have to use the @ symbol
+
+With the help of my guide i solidfied my ability to refactor code, something I need to work on more 
