@@ -29,3 +29,9 @@ console.log(reverse_string('What the heck'));
 var another_string = 'Here is another string';
 console.log(reverse_string(another_string));
 
+if (1 == 1){
+	console.log(reverse_string('turn this around'))
+} else {
+	console.log("Didn't work")
+}
+
