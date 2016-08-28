@@ -19,13 +19,13 @@ console.log(new_str)
 // now recreated with the ability to call it with different strings
 
 function reverse_string(string) {
-	for(var reverse_index = string.length - 1, new_string = ''; reverse_index >= 0; new_string += string[reverse_index--]) {}
+	for(var reverse_index = string.length - 1, new_string = ''; reverse_index >= 0; new_string += string[reverse_index--]) {};
 		return new_string;
 };
 
 console.log(reverse_string('hello'));
 console.log(reverse_string('What the heck'));
 
-var another_string = 'Here is another string'
-console.log(reverse_string(another_string))
+var another_string = 'Here is another string';
+console.log(reverse_string(another_string));
 
