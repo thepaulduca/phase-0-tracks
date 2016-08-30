@@ -14,9 +14,6 @@ for(var x = 0, longest_string = ""; x < array.length; x ++)
 };
 
 
-var my_array = ["Saab", "Volvo", "longest", "BMW"]
-console.log(longest_string_finder(my_array));
-
 
 /////////iterate through two objects and see if they have matching key, value pair
 // used the contain function to check if an array had an object then implimented this method in other functions
@@ -108,7 +105,17 @@ function arrayOfString(numOfString){
 	return arrayOfStrings;
 }
 
-console.log(arrayOfString(3)) 
+//driver
+
+var my_array = ["Saab", "Volvo", "longest", "BMW"]
+console.log(longest_string_finder(my_array));
+console.log(longest_string_finder(arrayOfString(5)));
+
+var object_1 = {name: "Tom", age: 22, occupation: 'dog walker'}
+var object_2 = {name: "Howard", age: 22, occupation: 'dog walker'}
+
+console.log(matchingOperator(object_1, object_2))
+
 
 
 
