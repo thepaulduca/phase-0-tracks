@@ -1,0 +1,22 @@
+queries.txt
+
+select * from books;
+
+select * from books,authors where books.author_id = authors.id;
+
+select * from books,authors where books.author;
+
+select authors.name, books.name from authors join books on books.author_id =authors.id;
+
+select authors.name, books.name, books.year_published from authors join books on books.author_id = authors.id;
+
+update books set name="The Shining" where name="The shining";
+
+update authors set name="The Science Man NDT" where name= "neil degrasse tyson";
+
+select books.name, books.year_published, 
+from books 
+join authors 
+on authors.id 
+
+delete from books where year_published = 2009;
