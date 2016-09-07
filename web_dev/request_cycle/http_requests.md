@@ -6,6 +6,7 @@ Status tells you about each HTTP request
 304 = not modeifed
 
 Types of HTTP requests 
-GET - requests data from specified resource 
-POST - submits data to be processed to a resource
+
+GET : requests data from specified resource 
+POST : submits data to be processed to a resource
 
